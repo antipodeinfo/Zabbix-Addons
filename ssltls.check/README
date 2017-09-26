@@ -1,5 +1,6 @@
- Author: Simon Kowallik <sk simonkowallik.com>
- Version: 1.0
+ Original author: Simon Kowallik <sk simonkowallik.com>
+ Forker : MJ
+ Version: 1.1
  License: GPL2
 
 DESCRIPTION
@@ -12,6 +13,8 @@ DESCRIPTION
  should work with STARTTLS.
 
  This script is intended for use with Zabbix 2.0
+ 
+ 26/09/2017  :added support for FQDN and SNI
 
 REQUIRES
 ========
@@ -100,11 +103,11 @@ EXAMPLES
    Data Type: boolean
    Use from shell: ssltls.check hostip:443 native simple
 
- Query the lifetime of the Certificate on {HOST.IP}, lifetime is returned in Seconds from now.
-   Item Key: ssltls.check[{HOST.IP}:443,native,lifetime]
+ Query the lifetime of the Certificate on {HOST.NAME}, lifetime is returned in Seconds from now.
+   Item Key: ssltls.check[{HOST.NAME}:443,native,lifetime]
    Type of Information: Numeric (unsigned)
    Data Type: Decimal 
-   Use from shell: ssltls.check hostip:443 native lifetime
+   Use from shell: ssltls.check hostname:443 native lifetime
 
  Query certificate fingerprint from IMAPS Service (TCP 993) on {HOST.NAME}
    Item Key: ssltls.check[{HOST.NAME}:993,native,fingerprint]
